@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/orbit-studio.svg" alt="ORBIT Studio API" width="100%">
+  <img src="assets/cover.svg" alt="Marketing Agency Backend API" width="100%">
   <br>
   <img src="https://img.shields.io/badge/Django-5.2-0C4B33?style=for-the-badge&logo=django&logoColor=white" alt="Django">
   <img src="https://img.shields.io/badge/DRF-API-A30000?style=for-the-badge&logo=django&logoColor=white" alt="Django REST Framework">
@@ -8,7 +8,7 @@
   <p><strong>От первого касания до кейса в портфолио — один API.</strong></p>
 </div>
 
-ORBIT — API для сайта маркетингового агентства. Он объединяет каталог услуг, опубликованные работы, список клиентов, социальные ссылки и входящие лиды.
+Этот репозиторий содержит API для сайта маркетингового агентства. Он объединяет каталог услуг, опубликованные работы, список клиентов, социальные ссылки и входящие лиды.
 
 ## Поток проекта
 

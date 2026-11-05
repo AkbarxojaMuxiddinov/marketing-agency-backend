@@ -1,41 +1,67 @@
-# 🚀 Marketing Agency Backend API
+<div align="center">
+  <img src="assets/orbit-studio.svg" alt="ORBIT Studio API" width="100%">
+  <br>
+  <img src="https://img.shields.io/badge/Django-5.2-0C4B33?style=for-the-badge&logo=django&logoColor=white" alt="Django">
+  <img src="https://img.shields.io/badge/DRF-API-A30000?style=for-the-badge&logo=django&logoColor=white" alt="Django REST Framework">
+  <img src="https://img.shields.io/badge/PostgreSQL-storage-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/Docker-compose-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Compose">
+  <p><strong>От первого касания до кейса в портфолио — один API.</strong></p>
+</div>
 
-Бэкенд-часть сервиса для маркетингового агентства, разработанная на **Django REST Framework** с использованием **PostgreSQL** и **Docker**.
+ORBIT — API для сайта маркетингового агентства. Он объединяет каталог услуг, опубликованные работы, список клиентов, социальные ссылки и входящие лиды.
 
-Проект представляет собой RESTful API для управления заявками (лидами), услугами агентства и портфолио выполненных кейсов.
+## Поток проекта
 
----
+```mermaid
+flowchart LR
+    V[Посетитель сайта] --> S[Услуги]
+    V --> P[Портфолио]
+    V --> L[Форма заявки]
+    L --> D[(Lead в PostgreSQL)]
+    A[Команда агентства] --> ADM[Django Admin]
+    ADM --> D
+    ADM --> C[(Кейсы и клиенты)]
+```
 
-## 🛠 Технологический стек
+## API-карта
 
-* **Язык программирования:** Python 3.10+
-* **Фреймворк:** Django, Django REST Framework (DRF)
-* **База данных:** PostgreSQL
-* **Контейнеризация:** Docker, Docker Compose
-* **CORS:** django-cors-headers (для интеграции с фронтендом)
+Все маршруты данных находятся под `/api/v1/`.
 
----
+| Метод | Путь | Назначение |
+|---|---|---|
+| `GET`, `POST` | `/api/v1/services/` | Просмотр и создание услуг |
+| `GET`, `POST` | `/api/v1/portfolio/` | Просмотр и создание проектов |
+| `GET` | `/api/v1/clients/` | Активные клиенты в заданном порядке |
+| `GET` | `/api/v1/social-links/` | Активные ссылки на Instagram и Telegram |
+| `POST` | `/api/v1/leads/create/` | Отправить имя, телефон и сообщение |
+| `GET` | `/` | Главная страница агентства |
+| `GET` | `/admin/` | Администрирование контента и заявок |
 
-## ✨ Основной функционал и API Endpoints
-
-### 📍 Эндпоинты API:
-* **`POST /api/v1/leads/`** — Прием заявок от клиентов (имя, телефон, выбранный тариф, роль в компании, ссылка на сайт/Instagram, сообщение).
-* **`GET /api/v1/services/`** — Получение списка оказываемых услуг агентства.
-* **`GET /api/v1/portfolio/`** — Получение списка выполненных кейсов и работ.
-
-### 🛡 Панель администратора:
-* **`GET /admin/`** — Встроенная административная панель Django для удобного управления полученными заявками, услугами и портфолио.
-
----
-
-## 📁 Структура проекта
+## Контентная модель
 
 ```text
-marketing-agency-site/
-├── agency/                  # Основное Django-приложение (models, views, serializers, urls)
-├── marketing_agency/        # Главные настройки проекта (settings.py, urls.py)
-├── media/                   # Загружаемые медиафайлы (изображения кейсов/услуг)
-├── docker-compose.yml       # Конфигурация Docker Compose (web + db)
-├── Dockerfile               # Инструкция для сборки образа Django
-├── manage.py                # Управляющий скрипт Django
-└── requirements.txt         # Зависимости Python
+Service ───────────── каталог услуг и цена
+Portfolio ─────────── кейс, изображение и ссылка
+Client ────────────── логотип, сайт и порядок показа
+SocialLink ────────── Instagram / Telegram
+Lead ──────────────── контакт и статус обработки
+```
+
+## Запуск
+
+```bash
+pip install -r requirements.txt
+docker compose up --build
+```
+
+После запуска примените миграции:
+
+```bash
+docker compose exec web python manage.py migrate
+```
+
+API работает на `http://localhost:8000`, административная панель — на `/admin/`. Docker Compose поднимает веб-сервис и PostgreSQL.
+
+## Технологии
+
+`Python` · `Django` · `Django REST Framework` · `PostgreSQL` · `Docker Compose` · `WhiteNoise`

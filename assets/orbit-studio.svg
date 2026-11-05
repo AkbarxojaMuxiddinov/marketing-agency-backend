@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" fill="none">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1200" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F0E6"/>
+      <stop offset="1" stop-color="#E7E4D9"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="720" y1="70" x2="1080" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8FF58"/>
+      <stop offset="1" stop-color="#B1E437"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" stroke="#202624" stroke-opacity=".08"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="340" rx="28" fill="url(#paper)"/>
+  <rect x="670" width="530" height="340" fill="url(#grid)" opacity=".72"/>
+  <circle cx="930" cy="170" r="132" fill="url(#orb)"/>
+  <circle cx="930" cy="170" r="96" stroke="#18211C" stroke-width="1.5" stroke-opacity=".55"/>
+  <circle cx="930" cy="170" r="59" stroke="#18211C" stroke-width="1.5" stroke-opacity=".35"/>
+  <ellipse cx="930" cy="170" rx="132" ry="48" transform="rotate(-30 930 170)" stroke="#18211C" stroke-width="1.5" stroke-opacity=".65"/>
+  <circle cx="1037" cy="107" r="9" fill="#F47744"/>
+  <circle cx="812" cy="161" r="7" fill="#24312B"/>
+  <circle cx="981" cy="286" r="7" fill="#F47744"/>
+  <rect x="832" y="144" width="196" height="52" rx="14" fill="#18211C"/>
+  <path d="M858 170h37m17 0h24m17 0h49" stroke="#D8FF58" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="909" cy="170" r="5" fill="#F47744"/>
+  <circle cx="955" cy="170" r="5" fill="#F47744"/>
+  <text x="72" y="74" fill="#536056" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="4">INDEPENDENT AGENCY TOOLKIT / 01</text>
+  <text x="68" y="166" fill="#18211C" font-family="Segoe UI,Arial,sans-serif" font-size="76" font-weight="800" letter-spacing="-4">ORBIT</text>
+  <text x="74" y="212" fill="#36423A" font-family="Segoe UI,Arial,sans-serif" font-size="22">Сигнал, который превращается в проект.</text>
+  <rect x="74" y="254" width="135" height="4" rx="2" fill="#F47744"/>
+  <text x="74" y="290" fill="#6C776E" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2.2">LEADS  /  SERVICES  /  CASES</text>
+</svg>
